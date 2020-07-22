@@ -2,7 +2,6 @@ package main
 
 import (
 	"net/http"
-	"os"
 
 	"github.com/gin-gonic/gin"
 	"github.com/posthog/posthog-go"
@@ -10,7 +9,7 @@ import (
 
 func main() {
 	r := gin.Default()
-	client := posthog.New(os.Getenv("Y7NloBxRA3R86YIMEzT1rpJ9yFsCc_qiftFeWNFM9lA"))
+	client := posthog.New("Y7NloBxRA3R86YIMEzT1rpJ9yFsCc_qiftFeWNFM9lA")
 	defer client.Close()
 
 	r.GET("/", func(c *gin.Context) {
