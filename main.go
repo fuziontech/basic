@@ -22,5 +22,9 @@ func main() {
 		})
 		c.JSON(http.StatusOK, gin.H{"status": "ok"})
 	})
+
+	r.GET("/health" func(c *gin.Context) {
+		c.JSON(http.StatusOK, gin.H{"status": "healthy"})
+	})
 	r.Run()
 }
